@@ -1,3 +1,44 @@
+.HomePage {
+  background-image: url("../src/HomeLibrary.jpg");
+  background-repeat: no-repeat;
+ background-size: cover;
+  
+   height: 100vh;
+ 
+}
+
+/* Add book  */
+.addBooksCard {
+  vertical-align: middle;
+  padding-top: 10%;
+  margin-left: 40%;
+  margin-right: 40%;
+  color: aliceblue;
+}
+
+/* addBook + updateBook bookCover */
+.bookCover {
+  background-image: url("../src/BookCover.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 90vh;
+
+}
+
+/* Background image for pages */
+.cardTiles {
+  margin: 4%;
+  height: 35vh;
+  width: 92%;
+}
+
+.cardBox{
+  background-image: url("../src/bookshelf.jpg");
+  background-size: contain;
+  background-repeat: repeat-y;
+}
+
 .App {
   text-align: center;
 }

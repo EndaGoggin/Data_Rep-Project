@@ -1,25 +1,39 @@
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Navbar, Nav } from 'react-bootstrap';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { Home } from './components/home'
+import { AddBook } from './components/addBook';
+import { ViewBook } from './components/viewBook';
+import { UpdateBook} from './components/updateBook';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+// Front page and routing
+class App extends Component {
+  render() {
+    return (
+      <Router>
+        <div className="App">
+          {/* Bootstrap Navbar */}
+          <Navbar bg="dark" variant="dark">
+            <Navbar.Brand href="/home">Library</Navbar.Brand>
+            <Nav className="mr-auto">
+              <Nav.Link href="/viewBook">View Books</Nav.Link>
+              <Nav.Link href="/addBook">Add Book</Nav.Link>
+            </Nav>
+          </Navbar>
+          <br />
+          <Switch>
+            <Route path='/home' component={Home} exact /> 
+            <Route path='/viewBook' component={ViewBook} exact />
+            <Route path='/addBook' component={AddBook} exact />
+            <Route path='/updateBook/:id' component={UpdateBook} exact/>
+          </Switch>
+
+        </div>
+      </Router>
+    );
+  }
 }
 
 export default App;
